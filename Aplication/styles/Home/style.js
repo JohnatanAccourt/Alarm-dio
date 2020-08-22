@@ -16,6 +16,7 @@ export const IconMenu = ({style}) => (
 export const Styled_Menu_Icon = styled(IconMenu)`
     color: ${props => props.theme.colors.gray_light};
 `;
+
 export const IconAdd = ({style}) => (
     <Ionicons
         style={style}
@@ -25,6 +26,31 @@ export const IconAdd = ({style}) => (
 )
 export const Styled_Add_Icon = styled(IconAdd)`
     color: ${props => props.theme.colors.gray_light};
+`;
+
+export const IconPencil = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-pricetag'
+        size={30}
+    />
+)
+export const Styled_Pencil_Icon = styled(IconPencil)`
+    color: ${props => props.theme.colors.gray_light};
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+`;
+
+export const IconClose = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-close'
+        size={40}
+    />
+)
+export const Styled_Close_Icon = styled(IconClose)`
+    color: #FF0000;
 `;
 
 // icons =============================================
@@ -169,3 +195,75 @@ export const Config_Icon = styled.TouchableOpacity `
 `;
 
 // List prop =============================================
+// CustomModal prop =============================================
+
+export const Modal = styled.Modal ``;
+
+export const Modal_Centered = styled.View `
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0, 0.2);
+`;
+
+export const Modal_Display = styled.View `
+    width: 90%;
+    /* height: 300px; */
+    align-self: center;
+    background-color: ${props => props.theme.colors.background};
+    /* align-items: center;
+    justify-content: center; */
+`;
+
+export const Wrapper_Text_Input = styled.View `
+    width: 88%;
+    align-self: center;
+    flex-direction: row;
+    margin-bottom: 23px;
+`;
+
+
+export const Text_Input = styled.TextInput `
+    border-color: ${props => props.theme.colors.gray_bold};
+    color: ${props => props.theme.colors.text_color};
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 30px;
+`;
+
+export const Text_Title = styled.Text `
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: ${props => props.theme.colors.text_color}
+`;
+
+export const Btn_close = styled.TouchableOpacity `
+    width: 40px;
+    height: 40px;
+    justify-content:center;
+    align-items: center;
+`;
+
+export const Btn_confirm = styled.TouchableOpacity `
+    width: 95%;
+    height: 50px;
+    background-color: #36A814;
+    justify-content:center;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 10px;
+`;
+
+export const Text_btn = styled.Text `
+    font-size: 21px;
+    text-align: center;
+    color: #fff;
+`;
+
+
+
+// CustomModal prop =============================================
+
+

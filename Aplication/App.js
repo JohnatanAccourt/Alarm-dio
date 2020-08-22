@@ -12,7 +12,6 @@ import Dark from './constants/Dark';
 import Home from './screens/Home.js';
 import DrawerNav from './props/DrawerNav.js'
 import Info from './screens/Info.js';
-import Responsable from './screens/Responsable.js';
 import Shop from './screens/Shop.js';
 
 import {
@@ -62,10 +61,9 @@ export default function App() {
                     darkModeValue={dark} 
                      />
                 }>
-                    <Drawer.Screen name="Home" component={Home} darkModeValue={dark} onDarkModeChange={() => setDark(!dark)}/>
-                    {/* <Drawer.Screen name="Info" component={Info} />
-                    <Drawer.Screen name="Responsable" component={Responsable} />
-                    <Drawer.Screen name="Shop" component={Shop} /> */}
+                    <Drawer.Screen name="Home" component={Home} />
+                    <Drawer.Screen name="Info" component={Info} />
+                    {/* <Drawer.Screen name="Shop" component={Shop} /> */}
                 </Drawer.Navigator>
             </NavigationContainer>
         </ThemeProvider>

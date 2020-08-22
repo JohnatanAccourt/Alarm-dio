@@ -48,14 +48,7 @@ export default function DrawerNav({ navigation, darkModeValue, onDarkModeChange 
                 </Text_BTN>
             </Button>
 
-            <Button>
-                <Styled_Hand_Icon />
-                <Text_BTN>
-                    Avisar ao responsável
-                </Text_BTN>
-            </Button>
-
-            <Button>
+            <Button onPress={() => navigation.navigate('Info')}>
                 <Styled_Help_Icon />
                 <Text_BTN>
                     Informações adicionais
