@@ -53,6 +53,34 @@ export const Styled_Close_Icon = styled(IconClose)`
     color: #FF0000;
 `;
 
+export const IconAlarm = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-alarm'
+        size={30}
+    />
+)
+export const Styled_Alarm_Icon = styled(IconAlarm)`
+    color: ${props => props.theme.colors.gray_light};
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+`;
+
+export const IconAmount = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-albums'
+        size={30}
+    />
+)
+export const Styled_Amount_Icon = styled(IconAmount)`
+    color: ${props => props.theme.colors.gray_light};
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+`;
+
 // icons =============================================
 
 
@@ -112,7 +140,7 @@ export const Text_h3 = styled(Text_h2) `
 
 // List prop =============================================
 
-export const Scroll_List = styled.ScrollView `
+export const Scroll_List = styled.ScrollView`
     width: 85%;
     height: 10px;
     align-self: center;
@@ -208,11 +236,10 @@ export const Modal_Centered = styled.View `
 
 export const Modal_Display = styled.View `
     width: 90%;
-    /* height: 300px; */
     align-self: center;
     background-color: ${props => props.theme.colors.background};
-    /* align-items: center;
-    justify-content: center; */
+    border-radius: 15px;
+    padding: 5px;
 `;
 
 export const Wrapper_Text_Input = styled.View `
@@ -233,33 +260,64 @@ export const Text_Input = styled.TextInput `
 `;
 
 export const Text_Title = styled.Text `
-    font-size: 23px;
+    font-size: 25px;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 20px;
     color: ${props => props.theme.colors.text_color}
 `;
 
 export const Btn_close = styled.TouchableOpacity `
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 60px;
+    height: 60px;
     justify-content:center;
     align-items: center;
 `;
 
 export const Btn_confirm = styled.TouchableOpacity `
-    width: 95%;
+    width: 90%;
     height: 50px;
     background-color: #36A814;
     justify-content:center;
     align-items: center;
     align-self: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 `;
 
 export const Text_btn = styled.Text `
     font-size: 21px;
     text-align: center;
     color: #fff;
+`;
+
+
+export const Btn_TimePicker = styled.TouchableOpacity `
+    border-color: ${props => props.theme.colors.gray_bold};
+    border-bottom-width: 2px;
+    color: ${props => props.theme.colors.text_color};
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    justify-content:center;
+    align-self: center;
+`;
+
+export const Text_btn_Picker = styled.Text `
+    color: ${props => props.theme.colors.text_color};
+    font-size: 18px;
+    padding-left: 30px;
+`;
+
+export const Text_Error = styled.Text `
+    font-size: 16px;
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 15px;
 `;
 
 
