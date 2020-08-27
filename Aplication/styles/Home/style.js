@@ -67,6 +67,7 @@ export const Styled_Alarm_Icon = styled(IconAlarm)`
     bottom: 10px;
 `;
 
+
 export const IconAmount = ({style}) => (
     <Ionicons
         style={style}
@@ -79,6 +80,41 @@ export const Styled_Amount_Icon = styled(IconAmount)`
     position: absolute;
     left: 0;
     bottom: 10px;
+`;
+
+export const IconBigClose = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-close-circle'
+        size={55}
+    />
+)
+export const Styled_Big_Close_Icon = styled(IconBigClose)`
+    color: #FF0000;
+
+`;
+
+export const IconBigCheck = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-checkmark-circle'
+        size={55}
+    />
+)
+export const Styled_Big_Check_Icon = styled(IconBigCheck)`
+    color: #298807;
+`;
+
+export const IconBiggerAdd = ({style}) => (
+    <Ionicons
+        style={style}
+        name='md-add'
+        size={220}
+    />
+)
+export const Styled_Bigger_Add_Icon = styled(IconBiggerAdd)`
+    color: ${props => props.theme.colors.gray_light};
+    width: 50%;
 `;
 
 // icons =============================================
@@ -295,7 +331,6 @@ export const Text_btn = styled.Text `
     color: #fff;
 `;
 
-
 export const Btn_TimePicker = styled.TouchableOpacity `
     border-color: ${props => props.theme.colors.gray_bold};
     border-bottom-width: 2px;
@@ -320,8 +355,59 @@ export const Text_Error = styled.Text `
     margin-bottom: 15px;
 `;
 
-
-
 // CustomModal prop =============================================
+// EmptyList prop =============================================
+
+
+export const ContainerList = styled.View`
+    width: 100%;
+    margin-top: 10px;
+    align-self: center;
+    justify-content:center;
+`;
+
+export const WrapperList = styled.View`
+    width: 100%;
+    flex-direction: row;
+`;
+
+export const InnerInfo = styled.View`
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+`;
+
+export const Text_Description = styled.Text `
+    color: ${props => props.theme.colors.gray_bold};
+    font-size: 18px;
+    text-align: center;
+`;
+
+export const WrapperInfo = styled.TouchableOpacity`
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InnerList = styled.View`
+    width: 50%;
+    /* margin-left: 10px; */
+    flex-direction: column;
+`;
+
+export const Text_Add_h1 = styled.Text `
+    color: ${props => props.theme.colors.gray_bold};
+    font-size: 30px;
+    text-align: left;
+`;
+
+export const Text_Add_h2 = styled.Text `
+    color: ${props => props.theme.colors.gray_bold};
+    font-size: 23px;
+    text-align: left;
+`;
+
+// EmptyList prop =============================================
 
 

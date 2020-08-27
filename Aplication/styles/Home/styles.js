@@ -12,6 +12,12 @@ export default StyleSheet.create({
         color: '#62B559',
         marginLeft: 10,
         marginRight: 5
+    },
+    flatList:{
+        width: '85%',
+        height: 10,
+        alignSelf: 'center',
+        marginTop: 10
     }
 
 });
