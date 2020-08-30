@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 
 import White from './constants/White';
@@ -53,6 +53,10 @@ export default function App() {
 
     return (
         <ThemeProvider theme={dark ? Dark : White }>
+            <StatusBar
+                barStyle={ dark ? 'light-content' : 'dark-content' }
+                backgroundColor={dark ? Dark.colors.background : White.colors.background}
+            />
             <NavigationContainer>
                 <Drawer.Navigator
                     initialRouteName="Home"

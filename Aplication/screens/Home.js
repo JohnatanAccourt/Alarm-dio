@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
-import {Text, View, TouchableOpacity, Platform, FlatList} from 'react-native';
+import { useState, useEffect } from 'react';
+import {Text, View, TouchableOpacity, Platform, FlatList, AsyncStorage} from 'react-native';
 import styles from '../styles/Home/styles';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -34,8 +34,9 @@ export default function Home({ navigation }) {
     const [mode, setMode] = useState('time');
     const [show, setShow] = useState(false);
 
-    // console.log(Remedy)
-    
+    const [RemedyData, setRemedyData] = useState([]);
+
+
     const onChange = (event, selectedDate) => {
         let currentDate = selectedDate || time;
         setShow(Platform.OS === 'ios');
@@ -60,7 +61,7 @@ export default function Home({ navigation }) {
         setTextError('');
     } 
 
-    function createAlarm(){
+    async function createAlarm(){
         if(remedy.length == 0){
             setTextError('Por favor coloque o nome do remédio.');
 
@@ -71,18 +72,49 @@ export default function Home({ navigation }) {
             setTextError('É importante que defina um horário para alerta-lo.');
 
         } else{
-            const remedySubmit = {
-                icon: 'md-close-circle',
-                remedyName: remedy,
-                amount: amount,
-                time: chosedTime,
-                status: "Não tomou hoje"
+
+            try {
+                const remedySubmit = {
+                    icon: 'md-close-circle',
+                    remedyName: remedy,
+                    amount: amount,
+                    time: chosedTime,
+                    status: "Não tomou hoje"
+                }
+
+                Remedy.push(remedySubmit);
+                await AsyncStorage.setItem("@Remedy", JSON.stringify(Remedy)).then(console.log('deu bom mano'))
+
+                loadData();
+                
+                setVisibleModal(!modal);
+
+            }catch(err){
+                console.log(err)
+
             }
-    
-            Remedy.push(remedySubmit);
-            setVisibleModal(!modal);
         }
     }
+
+    async function loadData(){
+        let resultRemedy = await AsyncStorage.getItem("@Remedy");
+        resultRemedy = JSON.parse(resultRemedy)
+        // console.log(resultRemedy)
+        setRemedyData(resultRemedy);
+
+    }
+
+    async function clearAllData(){
+        AsyncStorage.getAllKeys()
+        .then(keys => AsyncStorage.multiRemove(keys))
+        .then(() => alert('success'));
+    }
+
+
+    useEffect(() => {
+        loadData();
+        // clearAllData();
+    }, [])
 
     function ListEmpty() { return ( <EmptyListComponent onPressFromList={() => setVisibleModal(!modal) }/> ) }
 
@@ -124,7 +156,7 @@ export default function Home({ navigation }) {
             <Title greetings="Bem Vindo," nameUser="Johnatan Accourt" message="Tomou o Omeprazol hoje?"/>
 
             <FlatList
-                data={Remedy}
+                data={RemedyData}
                 keyExtractor={(item, index) => index.toString()}
                 style={styles.flatList}
                 ListEmptyComponent={() => ListEmpty()}

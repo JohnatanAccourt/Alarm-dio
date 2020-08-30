@@ -102,7 +102,6 @@ export const Styled_Sunny_Icon = styled(IconSunny)`
 
 export const Container = styled.View `
     flex: 1;
-    padding-top: ${Constants.statusBarHeight}px;
     background-color: ${props => props.theme.colors.background};
 `;
 
@@ -110,8 +109,8 @@ export const Logo_Header = styled.View `
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 5px;
 `;
 
 export const Logo_IMG = styled.Image `
@@ -144,7 +143,6 @@ export const Wrapper_Switch = styled.View `
     position: absolute;
     top: 10px;
     left: 10px;
-    padding-top: ${Constants.statusBarHeight}px;
     flex-direction: row;
     align-items: center;
     justify-content: center;

@@ -43,7 +43,6 @@ export const Styled_Chat_Icon = styled(IconChat)`
 
 export const Container = styled.View`
     flex: 1;
-    padding-top: ${Constants.statusBarHeight}px;
     background-color: ${props => props.theme.colors.background};
 `;
 export const ContainerScroll = styled.ScrollView`

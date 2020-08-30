@@ -122,7 +122,6 @@ export const Styled_Bigger_Add_Icon = styled(IconBiggerAdd)`
 
 export const Container = styled.View`
     flex: 1;
-    padding-top: ${Constants.statusBarHeight}px;
     background-color: ${props => props.theme.colors.background};
 `;
 
